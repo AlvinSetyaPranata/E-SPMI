@@ -176,23 +176,12 @@ export default function Login({ status, canResetPassword }) {
                             </div>
                         </form>
 
-                        {/* Divider */}
-                        <div className="relative my-6">
-                            <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-gray-200"></div>
-                            </div>
-                            <div className="relative flex justify-center">
-                                <span className="px-4 bg-white text-sm text-gray-500">atau</span>
-                            </div>
+                        {/* Admin Contact */}
+                        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                            <p className="text-sm text-blue-700 text-center">
+                                Belum punya akun? Hubungi admin untuk pembuatan akun.
+                            </p>
                         </div>
-
-                        {/* Register Link */}
-                        <p className="text-center text-sm text-gray-600">
-                            Belum punya akun?{' '}
-                            <Link href={route('register')} className="text-blue-600 hover:text-blue-700 font-medium">
-                                Daftar sekarang
-                            </Link>
-                        </p>
                     </div>
 
                     {/* Footer */}

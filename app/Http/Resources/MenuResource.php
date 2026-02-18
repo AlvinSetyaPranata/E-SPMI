@@ -38,7 +38,7 @@ class MenuResource
                 'icon' => 'UsersIcon',
                 'permission' => 'users.view',
                 'children' => [
-                    ['name' => 'Pengguna', 'href' => '#', 'icon' => 'UserGroupIcon', 'permission' => 'users.view'],
+                    ['name' => 'Pengguna', 'href' => route('core.users.index'), 'icon' => 'UserGroupIcon', 'permission' => 'users.view'],
                     ['name' => 'Roles & Permissions', 'href' => '#', 'icon' => 'ShieldCheckIcon', 'permission' => 'roles.view'],
                     ['name' => 'Unit Organisasi', 'href' => '#', 'icon' => 'BuildingOfficeIcon', 'permission' => 'units.view'],
                     ['name' => 'Activity Log', 'href' => '#', 'icon' => 'ClipboardDocumentListIcon', 'permission' => 'logs.view'],

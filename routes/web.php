@@ -36,9 +36,15 @@ Route::middleware(['auth'])->group(function () {
 
     // Core Module - Admin only (Superadmin & LPM Admin)
     Route::middleware(['role:' . Role::ROLE_SUPERADMIN . ',' . Role::ROLE_LPM_ADMIN])->prefix('core')->group(function () {
-        Route::get('/users', function () {
-            return Inertia::render('Core/Users/Index');
-        })->name('core.users.index');
+        // User Management
+        Route::get('/users', [\App\Http\Controllers\Core\UserController::class, 'index'])->name('core.users.index');
+        Route::get('/users/create', [\App\Http\Controllers\Core\UserController::class, 'create'])->name('core.users.create');
+        Route::post('/users', [\App\Http\Controllers\Core\UserController::class, 'store'])->name('core.users.store');
+        Route::get('/users/{user}', [\App\Http\Controllers\Core\UserController::class, 'show'])->name('core.users.show');
+        Route::get('/users/{user}/edit', [\App\Http\Controllers\Core\UserController::class, 'edit'])->name('core.users.edit');
+        Route::put('/users/{user}', [\App\Http\Controllers\Core\UserController::class, 'update'])->name('core.users.update');
+        Route::delete('/users/{user}', [\App\Http\Controllers\Core\UserController::class, 'destroy'])->name('core.users.destroy');
+        Route::post('/users/{user}/toggle-active', [\App\Http\Controllers\Core\UserController::class, 'toggleActive'])->name('core.users.toggle-active');
 
         Route::get('/roles', function () {
             return Inertia::render('Core/Roles/Index');
